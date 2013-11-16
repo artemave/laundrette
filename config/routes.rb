@@ -1,4 +1,11 @@
 Laundrette::Application.routes.draw do
+
+  if Rails.production?
+    devise_for :users, :controllers => { :registrations => "registrations" } 
+  else
+    devise_for :users
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
