@@ -1,6 +1,6 @@
 Laundrette::Application.routes.draw do
 
-  if Rails.production?
+  if Rails.env.production?
     devise_for :users, :controllers => { :registrations => "registrations" } 
   else
     devise_for :users
