@@ -1,5 +1,15 @@
 Laundrette::Application.routes.draw do
 
+  resources :colors
+
+  resources :item_types
+
+  resources :order_items
+
+  resources :orders
+
+  resources :customers
+
   if Rails.env.production?
     devise_for :users, :controllers => { :registrations => "registrations" } 
   else

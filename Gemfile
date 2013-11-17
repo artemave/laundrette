@@ -72,7 +72,7 @@ group :test, :development do
   gem 'rspec-given'
   gem 'rspec-fire'
   gem "cucumber-rails", :require => false
-  gem "database_cleaner", require: false # used by cucumber rails for DB setup/teardown
+  gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'capybara'
   gem "factory_girl_rails"
@@ -85,6 +85,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'money-rails'
+gem 'ransack'
 gem 'devise'
 gem 'simple_form'
 gem 'awesome_print'

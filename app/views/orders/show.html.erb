@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @order.due_date %>
+</p>
+
+<p>
+  <strong>Sticker number:</strong>
+  <%= @order.sticker_number %>
+</p>
+
+<p>
+  <strong>Complete:</strong>
+  <%= @order.complete %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
