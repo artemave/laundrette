@@ -50,3 +50,7 @@ Then(/^he can also view her past orders$/) do
   page.should have_content @order.due_date
   page.should have_content @order.total
 end
+
+Then(/^he can create new order for Sarah$/) do
+  page.should have_link "New order"
+end

@@ -15,5 +15,5 @@
   <%= @order.status %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Edit', edit_customer_order_path(@order.customer, @order) %> |
+<%= link_to 'Back', :back %>

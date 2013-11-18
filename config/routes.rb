@@ -6,9 +6,11 @@ Laundrette::Application.routes.draw do
 
   resources :order_items
 
-  resources :orders
+  resources :orders, only: [:index]
 
-  resources :customers
+  resources :customers do
+    resources :orders
+  end
 
   if Rails.env.production?
     devise_for :users, :controllers => { :registrations => "registrations" } 

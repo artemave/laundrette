@@ -25,6 +25,8 @@
   <%= @customer.notes %>
 </p>
 
+<%= link_to 'New order', new_customer_order_path(@customer) %>
+
 <h2>Orders</h2>
 <table>
   <thead>
@@ -43,9 +45,9 @@
         <td><%= order.due_date %></td>
         <td><%= order.sticker_number %></td>
         <td><%= order.status %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [@customer, order] %></td>
+        <td><%= link_to 'Edit', edit_customer_order_path(@customer, order) %></td>
+        <td><%= link_to 'Destroy', [@customer, order], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
