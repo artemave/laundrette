@@ -1,5 +1,4 @@
-<%= simple_form_for([@order.customer, @order]) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for(@order_with_items, url: [@order_with_items.customer, @order_with_items.order]) do |f| %>
 
   <div class="form-inputs">
     <%= f.input :due_date %>

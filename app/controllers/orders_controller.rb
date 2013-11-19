@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = @customer.orders.new
+    @order_with_items = OrderWithItems.new(customer: @customer)
   end
 
   # GET /orders/1/edit
@@ -25,15 +25,15 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = @customer.orders.new(order_params)
+    @order_with_items = OrderWithItems.new(params[:order_with_items].merge(customer: @customer))
 
     respond_to do |format|
-      if @order.save
-        format.html { redirect_to [@customer, @order], notice: 'Order was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @order }
+      if @order_with_items.save
+        format.html { redirect_to [@customer, @order_with_items.order], notice: 'Order was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @order_with_items.order }
       else
         format.html { render action: 'new' }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        format.json { render json: @order_with_items.errors, status: :unprocessable_entity }
       end
     end
   end

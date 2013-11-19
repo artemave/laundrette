@@ -85,6 +85,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'virtus'
 gem 'zurb-foundation'
 gem 'money-rails'
 gem 'ransack'

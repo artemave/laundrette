@@ -52,5 +52,5 @@ Then(/^he can also view her past orders$/) do
 end
 
 Then(/^he can create new order for Sarah$/) do
-  page.should have_link "New order"
+  page.should have_link "New Order"
 end
