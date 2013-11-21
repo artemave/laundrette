@@ -1,9 +1,29 @@
-<%= simple_form_for(@order_with_items, url: [@order_with_items.customer, @order_with_items.order]) do |f| %>
+<%= simple_form_for(@order, url: [@customer, @order]) do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :due_date %>
+    <%= f.input :due_date, as: :datetime %>
     <%= f.input :sticker_number %>
     <%= f.input :status %>
+  </div>
+
+  <h4>Order Items</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Item type</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= f.simple_fields_for :items do |item_fields| %>
+        <%= render 'item_fields', f: item_fields %>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= link_to_add_fields "Add Item", f, :items %>
   </div>
 
   <div class="form-actions">

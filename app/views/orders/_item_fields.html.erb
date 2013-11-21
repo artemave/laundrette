@@ -1,0 +1,15 @@
+<tr>
+  <%= f.hidden_field :_destroy %>
+  <td>
+    <%= f.input :item_type_id, collection: ItemType.all %>
+  </td>
+  <td>
+    <%= f.input :quantity %>
+  </td>
+  <td>
+    <%= f.input :price %>
+  </td>
+  <td>
+    <%= link_to "-", '#', class: "remove_field tiny secondary" %>
+  </td>
+</tr>

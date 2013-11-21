@@ -4,4 +4,8 @@ class OrderItem < ActiveRecord::Base
   belongs_to :color
 
   monetize :price_pennies
+
+  def name
+    item_type.name
+  end
 end
