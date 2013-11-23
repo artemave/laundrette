@@ -8,4 +8,8 @@ class OrderItem < ActiveRecord::Base
   def name
     item_type.name
   end
+
+  def subtotal
+    price * quantity
+  end
 end

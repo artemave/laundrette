@@ -28,16 +28,32 @@ Then(/^Timur can create an order for him capturing all those details$/) do
 
   fill_in 'order_due_date', with: Time.now + 2.days
 
-  click_link '+'
-  select 'jacket', from: 'Order Items'
-  click_link '+'
-  select 'costume', from: 'Order Items'
-  click_link '+'
-  select 'delivery', from: 'Order Items'
+  fill_in 'Notes', with: 'urgent delivery 3 days'
 
-  click_button 'Create Order'
+  add_order_item "jacket", 1
+  add_order_item "costume", 2, '4.50'
+  add_order_item "delivery", 1, '5.20'
+end
+
+def add_order_item type, quantity, price = nil
+  click_link 'Add Item'
+
+  within 'tbody tr:last-child' do
+    select type, from: 'Item type'
+    fill_in 'Quantity', with: quantity
+    fill_in 'Price', with: price if price
+  end
+end
+
+Then(/^he can link the order to the sticker number$/) do
+  fill_in 'order_sticker_number', with: '234hhhb'
 end
 
 Then(/^he can see the order total$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content '20.20'
+end
+
+Then(/^he can submit this new order$/) do
+  click_button 'Create Order'
+  page.should have_content 'Order was successfully created'
 end

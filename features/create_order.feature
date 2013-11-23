@@ -1,3 +1,4 @@
+@javascript
 Feature: create orders
 
   Scenario: existing customer
@@ -6,7 +7,7 @@ Feature: create orders
     And he wants it to be delivered in 3 days time
     Then Timur can create an order for him capturing all those details
     And he can link the order to the sticker number
-    And he can see and abjust the order total
+    And he can see the order total
     And he can submit this new order
 
   Scenario: new customer

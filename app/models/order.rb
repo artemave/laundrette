@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
   accepts_nested_attributes_for :items, allow_destroy: true
 
   def total
-    
+    items.map(&:subtotal).reduce(:+)
   end
 
   def complete!

@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.datetime :due_date
       t.string :sticker_number
       t.string :status
+      t.text :notes
       t.belongs_to :customer
 
       t.timestamps

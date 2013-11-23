@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20131117201151) do
     t.integer  "price_pennies",  default: 0,     null: false
     t.string   "price_currency", default: "GBP", null: false
     t.text     "details"
-    t.integer  "quantity"
+    t.integer  "quantity",       default: 0
     t.integer  "order_id"
     t.integer  "item_type_id"
     t.integer  "color_id"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20131117201151) do
     t.datetime "due_date"
     t.string   "sticker_number"
     t.string   "status"
+    t.text     "notes"
     t.integer  "customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"

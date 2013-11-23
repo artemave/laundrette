@@ -4,15 +4,17 @@
     <%= f.input :due_date, as: :datetime %>
     <%= f.input :sticker_number %>
     <%= f.input :status %>
+    <%= f.input :notes %>
   </div>
 
   <h4>Order Items</h4>
-  <table>
+  <table class="expandable_fields">
     <thead>
       <tr>
         <th>Item type</th>
         <th>Quantity</th>
         <th>Price</th>
+        <th>Subtotal</th>
         <th></th>
       </tr>
     </thead>
@@ -21,6 +23,12 @@
         <%= render 'item_fields', f: item_fields %>
       <% end %>
     </tbody>
+    <tfoot>
+      <tr class="order_total_row">
+        <td colspan="3">Order total:</td>
+        <td colspan="2" class="order_total"><%= f.object.total %></td>
+      </tr>
+    </tfoot>
   </table>
   <div>
     <%= link_to_add_fields "Add Item", f, :items %>

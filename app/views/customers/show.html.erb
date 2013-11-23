@@ -33,6 +33,9 @@
     <tr>
       <th>Due date</th>
       <th>Sticker number</th>
+      <th>Created At</th>
+      <th>Due Date</th>
+      <th>Total</th>
       <th>Complete</th>
       <th></th>
       <th></th>
@@ -44,6 +47,9 @@
       <tr>
         <td><%= order.due_date %></td>
         <td><%= order.sticker_number %></td>
+        <td><%= order.created_at %></td>
+        <td><%= order.due_date %></td>
+        <td><%= order.total %></td>
         <td><%= order.status %></td>
         <td><%= link_to 'Show', [@customer, order] %></td>
         <td><%= link_to 'Edit', edit_customer_order_path(@customer, order) %></td>
