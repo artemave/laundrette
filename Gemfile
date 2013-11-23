@@ -87,7 +87,7 @@ end
 
 gem 'virtus'
 gem 'zurb-foundation'
-gem 'money-rails'
+gem 'money-rails', git: 'https://github.com/RubyMoney/money-rails.git'
 gem 'ransack'
 gem 'devise'
 gem 'simple_form'

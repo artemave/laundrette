@@ -26,7 +26,7 @@
     <tfoot>
       <tr class="order_total_row">
         <td colspan="3">Order total:</td>
-        <td colspan="2" class="order_total"><%= f.object.total %></td>
+        <td colspan="2" class="order_total"><%= humanized_money_with_symbol_and_cents f.object.total %></td>
       </tr>
     </tfoot>
   </table>

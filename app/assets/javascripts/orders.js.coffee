@@ -35,4 +35,4 @@ jQuery ->
     $('.order_item_subtotal:visible').each () ->
       new_total+= parseFloat($(this).text())
 
-    $('.order_total').text(format_money(new_total))
+    $('.order_total').text('£'+format_money(new_total))

@@ -7,4 +7,8 @@ module ApplicationHelper
     end
     link_to(name, '#', class: "add_field button", data: {id: id, fields: fields.gsub("\n", "")})
   end
+
+  def humanized_money_with_symbol_and_cents money
+    humanized_money_with_symbol money, no_cents_if_whole: false
+  end
 end

@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/RubyMoney/money-rails.git
+  revision: fe757b0b48bd59b7e5277ad7b3ce8b78e3b8d646
+  specs:
+    money-rails (0.8.1)
+      activesupport (>= 3.0)
+      money (~> 5.1.0)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -155,10 +164,6 @@ GEM
     minitest (4.7.5)
     money (5.1.1)
       i18n (~> 0.6.0)
-    money-rails (0.8.1)
-      activesupport (>= 3.0)
-      money (~> 5.1.0)
-      railties (>= 3.0)
     multi_json (1.8.2)
     multi_test (0.0.2)
     nokogiri (1.6.0)
@@ -341,7 +346,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   meta_request
-  money-rails
+  money-rails!
   passenger
   pg
   pry

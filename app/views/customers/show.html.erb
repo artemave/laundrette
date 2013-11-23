@@ -43,19 +43,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @customer.orders.each do |order| %>
-      <tr>
-        <td><%= order.due_date %></td>
-        <td><%= order.sticker_number %></td>
-        <td><%= order.created_at %></td>
-        <td><%= order.due_date %></td>
-        <td><%= order.total %></td>
-        <td><%= order.status %></td>
-        <td><%= link_to 'Show', [@customer, order] %></td>
-        <td><%= link_to 'Edit', edit_customer_order_path(@customer, order) %></td>
-        <td><%= link_to 'Destroy', [@customer, order], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render partial: 'orders/order', collection: @customer.orders %>
   </tbody>
 </table>
 <br/>

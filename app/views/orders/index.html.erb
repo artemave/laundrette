@@ -5,7 +5,10 @@
     <tr>
       <th>Due date</th>
       <th>Sticker number</th>
-      <th>Status</th>
+      <th>Created At</th>
+      <th>Due Date</th>
+      <th>Total</th>
+      <th>Complete</th>
       <th></th>
       <th></th>
       <th></th>
@@ -13,16 +16,7 @@
   </thead>
 
   <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.due_date %></td>
-        <td><%= order.sticker_number %></td>
-        <td><%= order.status %></td>
-        <td><%= link_to 'Show', [order.customer, order] %></td>
-        <td><%= link_to 'Edit', edit_customer_order_path(order.customer, order) %></td>
-        <td><%= link_to 'Destroy', [order.customer, order], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render partial: 'order', collection: @orders %>
   </tbody>
 </table>
 
