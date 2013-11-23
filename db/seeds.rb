@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create! email: 'artem@test.com', password: 'password', password_confirmation: 'password'
+User.create! email: 'timur.kesaev@googlemail.com', password: 'password', password_confirmation: 'password'
 
 colors = %w[white black red green].map do |color|
   Color.create! name: color
@@ -28,7 +29,7 @@ sarah = Customer.create! name: 'Sarah Connor',
   phone: '07748726574',
   notes: '9am to 5pm working days'
 
-(1..3).each do |n|
+(1..5).each do |n|
   order = sarah.orders.create! due_date: Time.now + n.days,
     sticker_number: "#{n}_234ff33"
 
