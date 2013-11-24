@@ -86,7 +86,7 @@ group :production do
 end
 
 gem 'virtus'
-gem 'zurb-foundation'
+gem 'foundation-rails'
 gem 'money-rails', git: 'https://github.com/RubyMoney/money-rails.git'
 gem 'ransack'
 gem 'devise'
