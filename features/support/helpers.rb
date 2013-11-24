@@ -11,10 +11,6 @@ module Stuff
     @delivery ||= FactoryGirl.create :item_type, name: 'delivery'
   end
 
-  def white
-    @white ||= Color.create! name: 'white'
-  end
-
   def sign_in_as_user
     @user ||= FactoryGirl.create :user
     fill_in 'Email', with: @user.email

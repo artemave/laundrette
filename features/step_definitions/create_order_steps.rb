@@ -6,11 +6,9 @@ Given(/^Jon is an existing customer$/) do
     notes: '9am to 5pm working days'
 end
 
-When(/^he comes in with a brown jacket and a blue costume to clean$/) do
+When(/^he comes in with a brown jacket and a costume to clean$/) do
   ItemType.create! name: 'jacket', default_price: 6.to_money
   ItemType.create! name: 'costume', default_price: 8.to_money
-  Color.create! name: 'blue'
-  Color.create! name: 'brown'
 end
 
 When(/^he wants it to be delivered in 3 days time$/) do

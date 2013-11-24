@@ -10,7 +10,6 @@ Given(/^Sarah has previously used our service$/) do
 
   @order.items.create!(
     item_type: coat,
-    color: white,
     quantity: 2
   )
   @order.items.create!(

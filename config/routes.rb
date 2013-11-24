@@ -1,7 +1,5 @@
 Laundrette::Application.routes.draw do
 
-  resources :colors
-
   resources :item_types
 
   resources :order_items
