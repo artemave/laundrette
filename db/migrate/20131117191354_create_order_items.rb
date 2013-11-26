@@ -5,8 +5,7 @@ class CreateOrderItems < ActiveRecord::Migration
       t.text :details
       t.integer :quantity, default: 0
       t.belongs_to :order
-      t.belongs_to :item_type
-      t.references :color
+      t.belongs_to :service
 
       t.timestamps
     end

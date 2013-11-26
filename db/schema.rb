@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131117201151) do
-
-  create_table "colors", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20131117191544) do
 
   create_table "customers", force: true do |t|
     t.string   "name"
@@ -29,22 +23,13 @@ ActiveRecord::Schema.define(version: 20131117201151) do
     t.datetime "updated_at"
   end
 
-  create_table "item_types", force: true do |t|
-    t.string   "name"
-    t.integer  "default_price_pennies",  default: 0,     null: false
-    t.string   "default_price_currency", default: "GBP", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "order_items", force: true do |t|
     t.integer  "price_pennies",  default: 0,     null: false
     t.string   "price_currency", default: "GBP", null: false
     t.text     "details"
     t.integer  "quantity",       default: 0
     t.integer  "order_id"
-    t.integer  "item_type_id"
-    t.integer  "color_id"
+    t.integer  "service_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,6 +40,14 @@ ActiveRecord::Schema.define(version: 20131117201151) do
     t.string   "status"
     t.text     "notes"
     t.integer  "customer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "services", force: true do |t|
+    t.string   "name"
+    t.integer  "default_price_per_item_pennies",  default: 0,     null: false
+    t.string   "default_price_per_item_currency", default: "GBP", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

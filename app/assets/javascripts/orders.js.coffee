@@ -22,7 +22,7 @@ jQuery ->
 
     update_total()
 
-  $(document).on 'change', '.new_order_item .order_item_type_select', (event) ->
+  $(document).on 'change', '.new_order_item .order_service_select', (event) ->
     parent_row = $(this).closest('tr')
     default_price = $(this).find('option:selected').data('price')
     parent_row.find('.order_item_price').val(default_price)

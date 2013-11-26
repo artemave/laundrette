@@ -9,14 +9,10 @@
 User.create! email: 'artem@test.com', password: 'password', password_confirmation: 'password'
 User.create! email: 'timur.kesaev@googlemail.com', password: 'password', password_confirmation: 'password'
 
-colors = %w[white black red green].map do |color|
-  Color.create! name: color
-end
-
-coat     = ItemType.create! name: 'coat', default_price: 6.to_money
-costume  = ItemType.create! name: 'costume', default_price: 8.to_money
-delivery = ItemType.create! name: 'delivery'
-offer    = ItemType.create! name: 'offer'
+coat     = Service.create! name: 'coat', default_price_per_item: 6.to_money
+costume  = Service.create! name: 'costume', default_price_per_item: 8.to_money
+delivery = Service.create! name: 'delivery'
+offer    = Service.create! name: 'offer'
 
 john = Customer.create! name: 'John Connor',
   address: 'Boston 10',
@@ -34,17 +30,16 @@ sarah = Customer.create! name: 'Sarah Connor',
     sticker_number: "#{n}_234ff33"
 
   order.items.create!(
-    item_type: [coat, costume].sample,
-    color: colors.sample,
+    service: [coat, costume].sample,
     quantity: n
   )
   order.items.create!(
-    item_type: offer,
+    service: offer,
     price: [-1,-2].sample.to_money,
     details: "#{n}0% off for new customers"
   )
   order.items.create!(
-    item_type: delivery,
+    service: delivery,
     price: [2,3,4].sample.to_money
   )
   order.complete! if n.odd?

@@ -1,14 +1,14 @@
 module Stuff
   def coat
-    @coat ||= FactoryGirl.create :item_type, name: 'coat', default_price: 5.to_money
+    @coat ||= FactoryGirl.create :service, name: 'coat', default_price_per_item: 5.to_money
   end
 
   def offer
-    @offer ||= FactoryGirl.create :item_type, name: 'offer'
+    @offer ||= FactoryGirl.create :service, name: 'offer'
   end
 
   def delivery
-    @delivery ||= FactoryGirl.create :item_type, name: 'delivery'
+    @delivery ||= FactoryGirl.create :service, name: 'delivery'
   end
 
   def sign_in_as_user

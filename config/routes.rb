@@ -1,6 +1,6 @@
 Laundrette::Application.routes.draw do
 
-  resources :item_types
+  resources :services
 
   resources :order_items
 

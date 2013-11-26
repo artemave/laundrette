@@ -7,12 +7,12 @@ Given(/^Jon is an existing customer$/) do
 end
 
 When(/^he comes in with a brown jacket and a costume to clean$/) do
-  ItemType.create! name: 'jacket', default_price: 6.to_money
-  ItemType.create! name: 'costume', default_price: 8.to_money
+  Service.create! name: 'jacket', default_price_per_item: 6.to_money
+  Service.create! name: 'costume', default_price_per_item: 8.to_money
 end
 
 When(/^he wants it to be delivered in 3 days time$/) do
-  ItemType.create! name: 'delivery', default_price: 5.to_money
+  Service.create! name: 'delivery', default_price_per_item: 5.to_money
 end
 
 Then(/^Timur can create an order for him capturing all those details$/) do
@@ -37,7 +37,7 @@ def add_order_item type, quantity, price = nil
   click_link 'Add Item'
 
   within 'tbody tr:last-child' do
-    select type, from: 'Item type'
+    select type, from: 'Service'
     fill_in 'Quantity', with: quantity
     fill_in 'Price', with: price if price
   end

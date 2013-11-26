@@ -9,16 +9,16 @@ Given(/^Sarah has previously used our service$/) do
     sticker_number: '234ff33'
 
   @order.items.create!(
-    item_type: coat,
+    service: coat,
     quantity: 2
   )
   @order.items.create!(
-    item_type: offer,
+    service: offer,
     price: -1.to_money,
     details: '50% off for new customers'
   )
   @order.items.create!(
-    item_type: delivery,
+    service: delivery,
     price: 5.to_money
   )
   @order.complete!

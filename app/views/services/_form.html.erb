@@ -1,9 +1,9 @@
-<%= simple_form_for(@item_type) do |f| %>
+<%= simple_form_for(@service) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :default_price %>
+    <%= f.input :default_price_per_item %>
   </div>
 
   <div class="form-actions">

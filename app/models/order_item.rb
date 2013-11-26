@@ -1,11 +1,11 @@
 class OrderItem < ActiveRecord::Base
   belongs_to :order
-  belongs_to :item_type
+  belongs_to :service
 
   monetize :price_pennies
 
   def name
-    item_type.name
+    service.name
   end
 
   def subtotal
