@@ -1329,3 +1329,7 @@ $topbar-bg: $topbar-bg-color;
 .top-bar-section .right {
   margin-right: 45px;
 }
+
+.button {
+  border-radius: $global-radius;
+}
