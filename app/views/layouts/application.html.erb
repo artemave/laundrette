@@ -32,26 +32,36 @@
       </ul>
       <section class="top-bar-section">
         <ul class="right">
-          <li class="divider"></li>
-          <li><%= link_to "Orders", orders_path %></li>
-          <li class="divider"></li>
-          <li><%= link_to "Customers", customers_path %></li>
-          <li class="divider"></li>
-          <li><%= link_to "Services", services_path %></li>
+          <% if current_user %>
+            <li class="divider"></li>
+            <li><%= link_to "Orders", orders_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Customers", customers_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Services", services_path %></li>
+            <li class="divider"></li>
+            <li class="has-dropdown not-click">
+              <%= link_to current_user.email, '#' %>
+              <ul class="dropdown">
+                <li><%= link_to 'Profile', edit_user_registration_path %></li>
+                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+          <% end %>
           <li class="divider"></li>
         </ul>
       </section>
     </nav>
 
     <% if alert.present? %>
-      <div data-alert class="alert-box warning radius">
+      <div data-alert class="alert-box warning">
         <%= alert %>
         <a href="#" class="close">&times;</a>
       </div>
     <% end %>
 
     <% if notice.present? %>
-      <div data-alert class="alert-box success radius">
+      <div data-alert class="alert-box success">
         <%= notice %>
         <a href="#" class="close">&times;</a>
       </div>
