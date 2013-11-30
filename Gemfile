@@ -55,6 +55,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'puma'
   gem 'sqlite3'
   gem "binding_of_caller"
   gem 'selenium-webdriver'

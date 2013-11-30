@@ -54,10 +54,17 @@ class ServicesController < ApplicationController
   # DELETE /services/1
   # DELETE /services/1.json
   def destroy
-    @service.destroy
     respond_to do |format|
-      format.html { redirect_to services_url }
-      format.json { head :no_content }
+      if @service.destroy
+        format.html { redirect_to services_url }
+        format.json { head :no_content }
+      else
+        format.html {
+          flash[:alert] = @service.errors.full_messages.join(", ")
+          redirect_to :back
+        }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
+      end
     end
   end
 
