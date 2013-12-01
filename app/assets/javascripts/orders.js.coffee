@@ -14,8 +14,8 @@ jQuery ->
   $(document).on 'change', '.order_item_quantity, .order_item_price', (event) ->
     parent_row = $(this).closest('tr')
 
-    quantity = parent_row.find('.order_item_quantity').val()
-    price = parent_row.find('.order_item_price').val()
+    quantity = parent_row.find('input.order_item_quantity').val()
+    price = parent_row.find('input.order_item_price').val()
     new_value = parseFloat(price) * parseInt(quantity)
 
     parent_row.find('.order_item_subtotal').text(format_money(new_value))

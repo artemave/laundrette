@@ -1,3 +1,15 @@
 .order_total_row {
   font-weight: bold;
 }
+.order_item_price, .order_item_subtotal {
+  width: 80px;
+}
+.order_item_quantity {
+  width: 60px;
+}
+.order_service_select {
+  width: 110px;
+}
+.order_item_remove {
+  width: 80px;
+}

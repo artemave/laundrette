@@ -1,19 +1,22 @@
 <tr class="<%= f.object.persisted? ? "" : 'new_order_item' %>">
   <%= f.hidden_field :_destroy %>
-  <td>
+  <td class="order_service_select">
     <%= f.input :service_id, collection: (Service.all.map {|service| [service.name, service.id, {'data-price' => service.default_price_per_item}]}),
       input_html: { class: "order_service_select" } %>
   </td>
   <td>
+    <%= f.input :notes, { class: 'order_item_notes' } %>
+  </td>
+  <td class="order_item_quantity">
     <%= f.input :quantity, input_html: { class: 'order_item_quantity' } %>
   </td>
-  <td>
+  <td class="order_item_price">
     <%= f.input :price, input_html: { class: 'order_item_price' } %>
   </td>
   <td class="order_item_subtotal">
     <%= f.object.subtotal %>
   </td>
-  <td>
+  <td class="order_item_remove">
     <%= link_to "remove", '#', class: "remove_field tiny secondary" %>
   </td>
 </tr>

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20131117191544) do
   create_table "order_items", force: true do |t|
     t.integer  "price_pennies",  default: 0,     null: false
     t.string   "price_currency", default: "GBP", null: false
-    t.text     "details"
+    t.string   "notes"
     t.integer  "quantity",       default: 0
     t.integer  "order_id"
     t.integer  "service_id"

@@ -7,8 +7,8 @@ Given(/^Jon is an existing customer$/) do
 end
 
 When(/^he comes in with a brown jacket and a costume to clean$/) do
-  Service.create! name: 'jacket', default_price_per_item: 6.to_money
-  Service.create! name: 'costume', default_price_per_item: 8.to_money
+  Service.create! name: 'dry cleaning', default_price_per_item: 6.to_money
+  Service.create! name: 'laundry', default_price_per_item: 8.to_money
 end
 
 When(/^he wants it to be delivered in 3 days time$/) do
@@ -28,16 +28,17 @@ Then(/^Timur can create an order for him capturing all those details$/) do
 
   fill_in 'Notes', with: 'urgent delivery 3 days'
 
-  add_order_item "jacket", 1
-  add_order_item "costume", 2, '4.50'
-  add_order_item "delivery", 1, '5.20'
+  add_order_item "dry cleaning", "coat, jacket", 2
+  add_order_item "laundry", "coat", 1, '4.50'
+  add_order_item "delivery", "urgent", 1, '5.20'
 end
 
-def add_order_item type, quantity, price = nil
+def add_order_item service, notes, quantity, price = nil
   click_link 'Add Item'
 
   within 'tbody tr:last-child' do
-    select type, from: 'Service'
+    select service, from: 'Service'
+    fill_in 'Notes', with: notes
     fill_in 'Quantity', with: quantity
     fill_in 'Price', with: price if price
   end
@@ -48,7 +49,7 @@ Then(/^he can link the order to the sticker number$/) do
 end
 
 Then(/^he can see the order total$/) do
-  page.should have_content '20.20'
+  page.should have_content '21.70'
 end
 
 Then(/^he can submit this new order$/) do

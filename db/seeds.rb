@@ -9,8 +9,9 @@
 User.create! email: 'artem@test.com', password: 'password', password_confirmation: 'password'
 User.create! email: 'timur.kesaev@googlemail.com', password: 'password', password_confirmation: 'password'
 
-coat     = Service.create! name: 'coat', default_price_per_item: 6.to_money
-costume  = Service.create! name: 'costume', default_price_per_item: 8.to_money
+coat     = Service.create! name: 'dry cleaning', default_price_per_item: 6.to_money
+costume  = Service.create! name: 'laundry', default_price_per_item: 8.to_money
+ironing  = Service.create! name: 'ironing', default_price_per_item: 3.to_money
 delivery = Service.create! name: 'delivery'
 offer    = Service.create! name: 'offer'
 
@@ -36,7 +37,7 @@ sarah = Customer.create! name: 'Sarah Connor',
   order.items.create!(
     service: offer,
     price: [-1,-2].sample.to_money,
-    details: "#{n}0% off for new customers"
+    notes: "#{n}0% off for new customers"
   )
   order.items.create!(
     service: delivery,
