@@ -11,12 +11,12 @@
   <table class="expandable_fields">
     <thead>
       <tr>
-        <th>Item type</th>
+        <th width="150">Item type</th>
         <th>Notes</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Subtotal</th>
-        <th></th>
+        <th width="100">Quantity</th>
+        <th width="100">Price</th>
+        <th width="80">Subtotal</th>
+        <th width="80"></th>
       </tr>
     </thead>
     <tbody>
@@ -27,7 +27,7 @@
     <tfoot>
       <tr class="order_total_row">
         <td colspan="4">Order total:</td>
-        <td colspan="2" class="order_total"><%= humanized_money_with_symbol_and_cents f.object.total %></td>
+        <td colspan="2" class="order_total"><%= humanized_money_with_symbol_and_cents @order.total %></td>
       </tr>
     </tfoot>
   </table>

@@ -1,19 +1,56 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-2 medium-4 columns"><strong>Customer:</strong></div>
+  <div class="large-10 small-12 columns"><%= link_to @order.customer.name, @order.customer %></div>
+</div>
 
-<p>
-  <strong>Due date:</strong>
-  <%= @order.due_date %>
-</p>
+<div class="row">
+  <div class="large-2 medium-4 columns"><strong>Status:</strong></div>
+  <div class="large-10 small-12 columns"><%= @order.status %></div>
+</div>
 
-<p>
-  <strong>Sticker number:</strong>
-  <%= @order.sticker_number %>
-</p>
+<div class="row">
+  <div class="large-2 medium-4 columns"><strong>Due date:</strong></div>
+  <div class="large-10 small-12 columns"><%= @order.due_date %></div>
+</div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @order.status %>
-</p>
+<div class="row">
+  <div class="large-2 medium-4 columns"><strong>Sticker number:</strong></div>
+  <div class="large-10 small-12 columns"><%= @order.sticker_number %></div>
+</div>
+
+<div class="row">
+  <div class="large-2 medium-4 columns"><strong>Notes:</strong></div>
+  <div class="large-10 small-12 columns"><%= @order.notes %></div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th width="150">Item type</th>
+      <th>Notes</th>
+      <th width="100">Quantity</th>
+      <th width="100">Price</th>
+      <th width="80">Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.notes %></td>
+        <td><%= item.quantity %></td>
+        <td><%= humanized_money_with_symbol_and_cents item.price %></td>
+        <td><%= humanized_money_with_symbol_and_cents item.subtotal %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr class="order_total_row">
+      <td colspan="4">Order total:</td>
+      <td colspan="1" class="order_total"><%= humanized_money_with_symbol_and_cents @order.total %></td>
+    </tr>
+  </tfoot>
+</table>
 
 <%= link_to 'Edit', edit_customer_order_path(@order.customer, @order) %> |
 <%= link_to 'Back', :back %>

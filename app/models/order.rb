@@ -11,4 +11,8 @@ class Order < ActiveRecord::Base
   def complete!
     
   end
+
+  def status
+    read_attribute(:status).presence || 'New'
+  end
 end
