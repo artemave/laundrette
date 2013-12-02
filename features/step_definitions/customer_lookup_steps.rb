@@ -15,7 +15,7 @@ Given(/^Sarah has previously used our service$/) do
   @order.items.create!(
     service: offer,
     price: -1.to_money,
-    details: '50% off for new customers'
+    notes: '50% off for new customers'
   )
   @order.items.create!(
     service: delivery,

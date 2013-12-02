@@ -1,6 +1,6 @@
-@javascript
 Feature: create orders
 
+  @javascript
   Scenario: existing customer
     Given Jon is an existing customer
     When he comes in with a brown jacket and a costume to clean
@@ -13,5 +13,5 @@ Feature: create orders
   Scenario: new customer
     Given Rob is a first timer
     When he comes in with a pair of trousers to clean
-    Then Timur create a customer account for him with all his contact info
-    And then create an order for that account
+    Then Timur creates a customer account for him with all his contact info
+    And then creates an order for his account
