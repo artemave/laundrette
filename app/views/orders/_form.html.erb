@@ -3,7 +3,7 @@
   <div class="form-inputs">
     <%= f.input :due_date, as: :datetime %>
     <%= f.input :sticker_number %>
-    <%= f.input :status %>
+    <%= f.input :status, collection: Order::STATUSES, prompt: false %>
     <%= f.input :notes %>
   </div>
 

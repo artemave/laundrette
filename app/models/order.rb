@@ -4,12 +4,12 @@ class Order < ActiveRecord::Base
 
   accepts_nested_attributes_for :items, allow_destroy: true
 
+  STATUSES = %w(New Complete Cancelled)
+
+  validates :status, inclusion: { in: STATUSES }
+
   def total
     items.map(&:subtotal).reduce(:+)
-  end
-
-  def complete!
-    
   end
 
   def status

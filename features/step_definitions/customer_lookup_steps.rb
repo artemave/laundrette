@@ -6,7 +6,8 @@ Given(/^Sarah has previously used our service$/) do
     notes: '9am to 5pm working days'
 
   @order = sarah.orders.create! due_date: Time.now,
-    sticker_number: '234ff33'
+    sticker_number: '234ff33',
+    status: 'Complete'
 
   @order.items.create!(
     service: coat,
@@ -21,7 +22,6 @@ Given(/^Sarah has previously used our service$/) do
     service: delivery,
     price: 5.to_money
   )
-  @order.complete!
 end
 
 When(/^she comes one day and wants to clean a coat$/) do

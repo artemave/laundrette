@@ -59,7 +59,15 @@ Then(/^Timur can create an order for him capturing all those details$/) do
 
   add_order_item "dry cleaning", "coat, jacket", 2
   add_order_item "laundry", "coat", 1, '4.50'
+  add_order_item "delivery", "urgent", 2, '1.20'
+  remove_last_item # to add randomness
   add_order_item "delivery", "urgent", 1, '5.20'
+end
+
+def remove_last_item
+  within 'tbody tr:last-child' do
+    click_link 'remove'
+  end
 end
 
 def add_order_item service, notes, quantity, price = nil
