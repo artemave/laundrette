@@ -2,8 +2,8 @@
 
 <%= search_form_for @search do |f| %>
   <div class="field">
-    <%= f.label :name_cont, "Name contains" %>
-    <%= f.text_field :name_cont %>
+    <%= f.label :name_or_address_or_postcode_or_phone_cont, "Search" %>
+    <%= f.text_field :name_or_address_or_postcode_or_phone_cont, placeholder: "Name, address, postcode or phone" %>
   </div>
   <div class="actions"><%= f.submit "Search", class: 'button tiny' %></div>
 <% end %>

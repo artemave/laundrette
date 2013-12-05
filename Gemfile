@@ -86,7 +86,6 @@ group :production do
   gem 'pg'
 end
 
-gem 'virtus'
 gem 'foundation-rails'
 gem 'money-rails', git: 'https://github.com/RubyMoney/money-rails.git'
 gem 'ransack'
