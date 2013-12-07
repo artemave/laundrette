@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
@@ -24,26 +24,6 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-#
 group :development do
   gem 'guard-livereload'
   gem 'rack-livereload'
@@ -59,18 +39,12 @@ end
 
 group :test, :development do
   gem 'puma'
-  gem 'sqlite3'
-  gem "binding_of_caller"
   gem 'selenium-webdriver'
   gem 'fivemat'
-  gem 'pry'
   gem 'pry-rails'
-  gem 'pry-doc'
-  gem 'pry-git'
   gem 'pry-stack_explorer'
-  gem 'pry-nav'
-  gem 'coderay'
-  gem 'coolline'
+  gem 'pry-debugger'
+  gem 'pry-coolline'
   gem 'pry-rescue'
   gem "rspec-rails"
   gem 'rspec-given'
@@ -81,6 +55,7 @@ group :test, :development do
   gem 'capybara'
   gem "factory_girl_rails"
   gem 'shoulda'
+  gem 'sqlite3'
 end
 
 group :production do
@@ -90,7 +65,7 @@ group :production do
 end
 
 gem 'foundation-rails'
-gem 'money-rails', git: 'https://github.com/RubyMoney/money-rails.git'
+gem 'money-rails'
 gem 'ransack'
 gem 'devise'
 gem 'simple_form'

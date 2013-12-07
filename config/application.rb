@@ -37,5 +37,6 @@ module Laundrette
       g.javascripts false
       g.integration_tool nil
     end
+    config.i18n.enforce_available_locales = true
   end
 end
