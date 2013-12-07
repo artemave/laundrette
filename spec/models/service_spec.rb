@@ -1,5 +1,18 @@
 require 'spec_helper'
 
 describe Service do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "there is no order items linked to this service" do
+    it "can be destroyed" do
+      s = Service.create!
+      expect(s.destroy).to be_destroyed
+    end
+  end
+
+  context "there are items linked to this service" do
+    it "can be destroyed" do
+      s = Service.create!
+      OrderItem.create!(service: s)
+      expect(s.destroy).to eq false
+    end
+  end
 end

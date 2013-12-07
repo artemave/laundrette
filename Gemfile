@@ -64,6 +64,7 @@ group :production do
   gem 'pg'
 end
 
+gem "default_value_for", github: 'tsmango/default_value_for'
 gem 'foundation-rails'
 gem 'money-rails'
 gem 'ransack'
