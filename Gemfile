@@ -52,6 +52,9 @@ group :development do
   gem 'letter_opener'
   gem 'quiet_assets'
   gem 'meta_request'
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-cucumber'
 end
 
 group :test, :development do
