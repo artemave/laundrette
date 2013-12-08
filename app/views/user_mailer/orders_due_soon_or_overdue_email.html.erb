@@ -1,0 +1,21 @@
+<p>Hello, <%= @user.email %></p>
+
+<p>The following orders need your attention:</p>
+
+<table width="600" style="border:1px solid #333">
+  <tr>
+    <th>#</th>
+    <th>Due date</th>
+    <th>Customer</th>
+  </tr>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= link_to order.sticker_number, url_for([order.customer, order]) %></td>
+      <td><%= order.due_date %></td>
+      <td><%= link_to order.customer.name, url_for(order.customer) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>Cheers,<br/>
+Your shop</p>

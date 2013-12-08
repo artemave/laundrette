@@ -9,6 +9,9 @@ class Order < ActiveRecord::Base
   validates :status, inclusion: { in: STATUSES }
   validates :sticker_number, uniqueness: true, presence: true
 
+  scope :in_progress, -> { where(status: 'New') }
+  scope :due_soon_or_overdue, -> { in_progress.where("due_date < ?", Date.today + 2.day) }
+
   default_value_for :sticker_number do
     if last_order = Order.last and last_order != self
       new_number = last_order.sticker_number.gsub(/\d+/) { |num| num.to_i.next }

@@ -52,6 +52,7 @@ group :test, :development do
   gem "cucumber-rails", :require => false
   gem 'database_cleaner'
   gem 'simplecov', require: false
+  gem 'capybara-email'
   gem 'capybara'
   gem "factory_girl_rails"
   gem 'shoulda'
@@ -64,7 +65,7 @@ group :production do
   gem 'pg'
 end
 
-gem "default_value_for", github: 'tsmango/default_value_for'
+gem "default_value_for", github: 'tsmango/default_value_for' # until rails4 support lands upstream
 gem 'foundation-rails'
 gem 'money-rails'
 gem 'ransack'
