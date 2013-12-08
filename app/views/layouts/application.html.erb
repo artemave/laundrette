@@ -29,6 +29,11 @@
         <li class="name">
           <h1><%= link_to "Laundrette", root_path %></a></h1>
         </li>
+        <li class="toggle-topbar menu-icon" data-no-turbolink>
+          <a href="#">
+            <span>Menu</span>
+          </a>
+        </li>
       </ul>
       <section class="top-bar-section">
         <ul class="right">
@@ -54,14 +59,14 @@
     </nav>
 
     <% if alert.present? %>
-      <div data-alert class="alert-box warning">
+      <div data-alert data-no-turbolink class="alert-box warning">
         <%= alert %>
         <a href="#" class="close">&times;</a>
       </div>
     <% end %>
 
     <% if notice.present? %>
-      <div data-alert class="alert-box success">
+      <div data-alert data-no-turbolink class="alert-box success">
         <%= notice %>
         <a href="#" class="close">&times;</a>
       </div>
