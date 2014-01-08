@@ -65,9 +65,9 @@ group :production do
   gem 'pg'
 end
 
-gem "default_value_for", github: 'tsmango/default_value_for' # until rails4 support lands upstream
-gem 'foundation-rails'
-gem 'money-rails'
+gem "default_value_for"
+gem 'foundation-rails', github: 'mattmueller/foundation-rails' # until https://github.com/zurb/foundation-rails/pull/62 is included in gem
+gem 'money-rails', '0.8.1' # till they fix their stupid deprecation warnings
 gem 'ransack'
 gem 'devise'
 gem 'simple_form'

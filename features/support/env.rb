@@ -1,3 +1,4 @@
+require 'money/core_extensions'
 require 'cucumber/rails'
 require 'capybara/email'
 
