@@ -38,5 +38,12 @@ module Laundrette
       g.integration_tool nil
     end
     config.i18n.enforce_available_locales = true
+
+    # Precompile additional assets.
+    # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+    config.assets.precompile += %w(
+      vendor/modernizr.js
+    )
+
   end
 end
