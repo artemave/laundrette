@@ -65,6 +65,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'newrelic_rpm'
 gem "default_value_for"
 gem 'foundation-rails'
 gem 'money-rails', '0.8.1' # till they fix their stupid deprecation warnings
