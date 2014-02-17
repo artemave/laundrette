@@ -57,6 +57,7 @@ group :test, :development do
   gem "factory_girl_rails"
   gem 'shoulda'
   gem 'sqlite3'
+  gem 'poltergeist'
 end
 
 group :production do

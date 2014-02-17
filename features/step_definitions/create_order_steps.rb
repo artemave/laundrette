@@ -53,9 +53,9 @@ Then(/^Timur can create an order for him capturing all those details$/) do
   click_link 'Show'
   click_link 'New Order'
 
-  fill_in 'order_due_date', with: Time.now + 2.days
+  set_due_date Time.now + 2.days
 
-  fill_in 'Notes', with: 'urgent delivery 3 days'
+  set_notes 'urgent delivery 3 days'
 
   add_order_item "dry cleaning", "coat, jacket", 2
   add_order_item "laundry", "coat", 1, '4.50'
@@ -64,34 +64,43 @@ Then(/^Timur can create an order for him capturing all those details$/) do
   add_order_item "delivery", "urgent", 1, '5.20'
 end
 
-def remove_last_item
-  within 'tbody tr:last-child' do
-    click_link 'remove'
-  end
-end
-
-def add_order_item service, notes, quantity, price = nil
-  click_link 'Add Item'
-
-  within 'tbody tr:last-child' do
-    select service, from: 'Service'
-    fill_in 'Notes', with: notes
-    fill_in 'Quantity', with: quantity
-    fill_in 'Price', with: price if price
-  end
-end
-
 Then(/^he can link the order to the sticker number$/) do
   fill_in 'order_sticker_number', with: '234hhhb'
+  @expected_sticker_number = '234hhhb'
 end
 
 Then(/^he can see the order total$/) do
   page.should have_content '21.70'
 end
 
-Then(/^he can submit this new order$/) do
+Then(/^he can save this new order$/) do
   click_button 'Create Order'
   page.should have_content 'Order was successfully created'
+
+  new_order = Order.last
+
+  expect(new_order.customer).to eq(@jon)
+  expect(new_order.sticker_number).to eq(@expected_sticker_number)
+  expect(new_order.notes).to eq(@expected_notes)
+  expect(new_order.due_date.to_date).to eq(@expected_due_date.to_date)
+
+  @expected_order_items.sort! {|a,b| a[:notes] <=> b[:notes] }
+  new_order.items.sort{|a,b| a.notes <=> b.notes }.each_with_index do |item, i|
+    expected_item = @expected_order_items[i]
+
+    actual_attributes = {
+      service: item.service.name,
+      notes: item.notes,
+      quantity: item.quantity,
+    }
+    actual_attributes.should == expected_item.except(:price)
+
+    if expected_item[:price].present?
+      item.price.to_s.should == expected_item[:price]
+    else
+      item.price.should == item.service.default_price_per_item
+    end
+  end
 end
 
 Then(/^then creates an order for his account$/) do

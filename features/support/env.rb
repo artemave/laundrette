@@ -1,6 +1,9 @@
 require 'money/core_extensions'
 require 'cucumber/rails'
 require 'capybara/email'
+require 'capybara/poltergeist'
+
+Capybara.javascript_driver = ENV['FF'] ? :firefox : :poltergeist
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 

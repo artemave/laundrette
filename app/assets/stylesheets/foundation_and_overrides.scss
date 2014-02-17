@@ -1335,3 +1335,8 @@ $topbar-bg: $topbar-bg-color;
 .button {
   border-radius: $global-radius;
 }
+
+// Temp fix for http://foundation.zurb.com/forum/posts/2112-foundation-5100-syntax-error-in-js
+.foundation-data-attribute-namespace {
+    font-family: false;
+}
