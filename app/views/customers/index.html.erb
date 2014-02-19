@@ -1,11 +1,17 @@
 <h1>Listing customers</h1>
 
 <%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :name_or_address_or_postcode_or_phone_cont, "Search" %>
-    <%= f.text_field :name_or_address_or_postcode_or_phone_cont, placeholder: "Name, address, postcode or phone" %>
+  <div class="inline-form">
+    <div id='search' class="left-control-group">
+      <div class="field">
+        <%= f.text_field :name_or_address_or_postcode_or_phone_cont, placeholder: "Name, address, postcode or phone" %>
+      </div>
+      <div class="actions"><%= f.submit "Search", class: 'button tiny' %></div>
+    </div>
+    <div class="right-control-group">
+      <%= link_to 'New Customer', new_customer_path, class: "button tiny" %>
+    </div>
   </div>
-  <div class="actions"><%= f.submit "Search", class: 'button tiny' %></div>
 <% end %>
 
 <table>
@@ -39,5 +45,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Customer', new_customer_path, class: "button" %>

@@ -19,7 +19,7 @@ module Stuff
   end
 
   def search_customer name
-    fill_in 'Search', with: name
+    find('#search input[type="text"]').set name
     click_button 'Search'
   end
 end
