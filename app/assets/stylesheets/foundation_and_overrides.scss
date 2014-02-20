@@ -1344,28 +1344,3 @@ $topbar-bg: $topbar-bg-color;
 input, select {
   max-width: 400px;
 }
-
-.inline-form {
-  display: flex;
-  justify-content: space-between;
-
-  .left-control-group {
-    display: flex;
-    max-width: 600px;
-    flex: 1;
-
-    .field {
-      margin-right: 1em;
-      flex: 1;
-    }
-  }
-  .right-control-group {
-    flex: 1;
-    margin-left: 1em;
-    text-align:right;
-  }
-
-  .button {
-    margin-top: 2px;
-  }
-}

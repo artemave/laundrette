@@ -4,6 +4,7 @@
   <td><%= order.due_date %></td>
   <td><%= humanized_money_with_symbol_and_cents order.total %></td>
   <td><%= order.status %></td>
+  <td><%= display_paid order.paid %></td>
   <td><%= link_to 'Show', [order.customer, order] %></td>
   <td><%= link_to 'Edit', edit_customer_order_path(order.customer, order) %></td>
   <td><%= link_to 'Destroy', [order.customer, order], method: :delete, data: { confirm: 'Are you sure?' } %></td>

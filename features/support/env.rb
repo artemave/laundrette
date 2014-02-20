@@ -3,7 +3,7 @@ require 'cucumber/rails'
 require 'capybara/email'
 require 'capybara/poltergeist'
 
-Capybara.javascript_driver = ENV['FF'] ? :firefox : :poltergeist
+Capybara.javascript_driver = ENV['FF'] ? :selenium : :poltergeist
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 

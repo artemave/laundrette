@@ -4,6 +4,7 @@
     <%= f.input :due_date, as: :datetime %>
     <%= f.input :sticker_number %>
     <%= f.input :status, collection: Order::STATUSES, prompt: false %>
+    <%= f.input :paid %>
     <%= f.input :notes %>
   </div>
 

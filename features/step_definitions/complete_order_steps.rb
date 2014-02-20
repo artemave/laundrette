@@ -15,3 +15,7 @@ Then(/^Timur can mark it complete$/) do
 
   expect(Order.last.status).to eq("Complete")
 end
+
+Then(/^he should see that it is complete$/) do
+  page.should have_content 'Complete'
+end

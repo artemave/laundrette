@@ -35,4 +35,8 @@ module ApplicationHelper
   def humanized_money_with_symbol(value, options={})
     humanized_money(value, options.merge(:symbol => true))
   end
+
+  def display_paid paid
+    paid ? 'Yes' : 'No'
+  end
 end
