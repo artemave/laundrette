@@ -1341,14 +1341,18 @@ $topbar-bg: $topbar-bg-color;
     font-family: false;
 }
 
+input, select {
+  max-width: 400px;
+}
+
 .inline-form {
   display: flex;
   justify-content: space-between;
 
   .left-control-group {
     display: flex;
-    flex: 1;
     max-width: 600px;
+    flex: 1;
 
     .field {
       margin-right: 1em;
@@ -1356,7 +1360,9 @@ $topbar-bg: $topbar-bg-color;
     }
   }
   .right-control-group {
+    flex: 1;
     margin-left: 1em;
+    text-align:right;
   }
 
   .button {
