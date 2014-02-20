@@ -1344,3 +1344,7 @@ $topbar-bg: $topbar-bg-color;
 input, select {
   max-width: 400px;
 }
+
+input[type="checkbox"] {
+  margin-right: .5em;
+}
