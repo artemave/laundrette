@@ -1,14 +1,26 @@
 <h1>Listing orders</h1>
 
+<%= search_form_for @search do |f| %>
+  <div class="inline-form">
+    <div id='search' class="left-control-group">
+      <div class="field">
+        <%= f.text_field :sticker_number_cont, placeholder: "Sticker number" %>
+      </div>
+      <div class="actions"><%= f.submit "Search", class: 'button tiny' %></div>
+    </div>
+    <div class="right-control-group"></div>
+  </div>
+<% end %>
+
 <table>
   <thead>
     <tr>
-      <th>Sticker number</th>
-      <th>Created At</th>
-      <th>Due Date</th>
+      <th><%= sort_link @search, :sticker_number, 'Sticker number' %></th>
+      <th><%= sort_link @search, :created_at, 'Created At' %></th>
+      <th><%= sort_link @search, :due_date, 'Due Date' %></th>
       <th>Total</th>
-      <th>Status</th>
-      <th>Paid?</th>
+      <th><%= sort_link @search, :status, 'Status' %></th>
+      <th><%= sort_link @search, :paid, 'Paid?' %></th>
       <th></th>
       <th></th>
       <th></th>

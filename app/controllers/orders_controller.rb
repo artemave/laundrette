@@ -5,7 +5,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @search = Order.search(params[:q])
+    @orders = @search.result
   end
 
   # GET /orders/1
