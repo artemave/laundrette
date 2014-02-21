@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @search = Order.search(params[:q])
-    @orders = @search.result
+    @orders = @search.result.page(params[:page])
   end
 
   # GET /orders/1

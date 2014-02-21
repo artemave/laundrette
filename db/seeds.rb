@@ -26,22 +26,28 @@ sarah = Customer.create! name: 'Sarah Connor',
   phone: '07748726574',
   notes: '9am to 5pm working days'
 
-(1..5).each do |n|
-  order = sarah.orders.create! due_date: Time.now + n.days,
-    sticker_number: "#{n}_234ff33"
+Customer.create! name: "Terminator",
+  address: '134 Skynet'
 
-  order.items.create!(
-    service: [coat, costume].sample,
-    quantity: n
-  )
-  order.items.create!(
-    service: offer,
-    price: [-1,-2].sample.to_money,
-    notes: "#{n}0% off for new customers"
-  )
-  order.items.create!(
-    service: delivery,
-    price: [2,3,4].sample.to_money
-  )
-  order.complete! if n.odd?
+[sarah, john].each do |customer|
+  (1..15).each do |n|
+    order = customer.orders.create! due_date: Time.now + n.days,
+      sticker_number: "#{n}_234ff33_#{customer.name.first}",
+      paid: rand(3) == 0 ? true : false,
+      status: rand(2) == 0 ? 'New' : 'Complete'
+
+    order.items.create!(
+      service: [coat, costume].sample,
+      quantity: n
+    )
+    order.items.create!(
+      service: offer,
+      price: [-1,-2].sample.to_money,
+      notes: "#{n}0% off for new customers"
+    )
+    order.items.create!(
+      service: delivery,
+      price: [2,3,4].sample.to_money
+    )
+  end
 end

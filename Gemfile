@@ -71,6 +71,7 @@ gem "default_value_for"
 gem 'foundation-rails'
 gem 'money-rails', '0.8.1' # till they fix their stupid deprecation warnings
 gem 'ransack'
+gem 'kaminari'
 gem 'devise'
 gem 'simple_form'
 gem 'awesome_print'

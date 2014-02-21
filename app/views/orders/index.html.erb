@@ -12,6 +12,7 @@
   </div>
 <% end %>
 
+<%= paginate @orders %>
 <table>
   <thead>
     <tr>
@@ -31,5 +32,6 @@
     <%= render partial: 'order', collection: @orders %>
   </tbody>
 </table>
+<%= paginate @orders %>
 
 <br>

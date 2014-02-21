@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
   # GET /customers.json
   def index
     @search = Customer.search(params[:q])
-    @customers = @search.result
+    @customers = @search.result.page(params[:page])
   end
 
   # GET /customers/1
