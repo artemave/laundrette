@@ -27,7 +27,7 @@ gem 'turbolinks'
 group :development do
   gem 'guard-livereload'
   gem 'rack-livereload'
-  gem 'rb-fsevent', '~> 0.9'
+  gem 'rb-fsevent'
   gem "better_errors"
   gem 'letter_opener'
   gem 'quiet_assets'

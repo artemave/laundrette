@@ -354,7 +354,7 @@ DEPENDENCIES
   rails (= 4.0.3)
   rails_12factor
   ransack
-  rb-fsevent (~> 0.9)
+  rb-fsevent
   rspec-fire
   rspec-given
   rspec-rails
