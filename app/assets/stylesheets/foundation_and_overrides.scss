@@ -1348,3 +1348,9 @@ input, select {
 input[type="checkbox"] {
   margin-right: .5em;
 }
+
+ul.pagination {
+  float: right;
+  margin-bottom: .6em;
+  @include clearfix();
+}
