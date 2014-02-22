@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @search = Order.search(params[:q])
+    @search.sorts = 'created_at desc' if @search.sorts.empty?
     @orders = @search.result.page(params[:page])
   end
 
