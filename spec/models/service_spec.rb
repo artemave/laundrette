@@ -11,7 +11,7 @@ describe Service do
   context "there are items linked to this service" do
     it "can be destroyed" do
       s = Service.create!
-      OrderItem.create!(service: s)
+      FactoryGirl.create(:order).items.create!(service: s)
       expect(s.destroy).to eq false
     end
   end

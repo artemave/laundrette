@@ -2,6 +2,8 @@ class Order < ActiveRecord::Base
   belongs_to :customer
   has_many :items, class_name: 'OrderItem', dependent: :destroy
 
+  monetize :total_pennies
+
   accepts_nested_attributes_for :items, allow_destroy: true
 
   STATUSES = %w(New Complete Cancelled)
@@ -22,8 +24,5 @@ class Order < ActiveRecord::Base
   end
 
   default_value_for :status, 'New'
-
-  def total
-    items.map(&:subtotal).reduce(:+)
-  end
+  default_value_for :total, 0.to_money
 end
