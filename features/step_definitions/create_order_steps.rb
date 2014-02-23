@@ -50,7 +50,7 @@ Then(/^Timur can create an order for him capturing all those details$/) do
 
   search_customer 'Jon Connor'
 
-  click_link 'Show'
+  click_link 'Jon Connor'
   click_link 'New Order'
 
   set_due_date Time.now + 2.days

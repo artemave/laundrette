@@ -33,7 +33,7 @@ Then(/^Timur can see her contact info$/) do
 
   search_customer 'Sarah'
 
-  click_link 'Show'
+  click_link 'Sarah Connor'
 
   page.should have_content 'Sarah Connor'
   page.should have_content 'Flat 4 Mulgrave road sutton surrey'

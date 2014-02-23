@@ -25,19 +25,17 @@
       <th>Notes</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= customer.name %></td>
+        <td><%= link_to customer.name, customer %></td>
         <td><%= customer.address %></td>
         <td><%= customer.postcode %></td>
         <td><%= customer.phone %></td>
         <td><%= customer.notes %></td>
-        <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
