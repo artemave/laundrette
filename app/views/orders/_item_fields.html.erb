@@ -1,7 +1,7 @@
 <tr class="<%= f.object.persisted? ? "" : 'new_order_item' %>">
   <%= f.hidden_field :_destroy %>
   <td class="order_service_select">
-    <%= f.input :service_id, collection: (Service.order('name').all.map {|service| [service.name, service.id, {'data-price' => service.default_price_per_item}]}),
+    <%= f.input :service_id, collection: (Service.order('name').map {|service| [service.name, service.id, {'data-price' => service.default_price_per_item}]}),
       prompt: false, input_html: { class: "order_service_select" } %>
   </td>
   <td>
