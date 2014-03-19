@@ -23,7 +23,7 @@
   <div class="large-10 small-12 columns"><%= @order.sticker_number %></div>
 </div>
 
-<div class="row">
+<div class="row unprintable">
   <div class="large-2 medium-4 columns"><strong>Notes:</strong></div>
   <div class="large-10 small-12 columns"><%= @order.notes %></div>
 </div>
@@ -57,5 +57,7 @@
   </tfoot>
 </table>
 
-<%= link_to 'Edit', edit_customer_order_path(@order.customer, @order) %> |
-<%= link_to 'Back', :back %>
+<div class="unprintable">
+  <%= link_to 'Edit', edit_customer_order_path(@order.customer, @order) %> |
+  <%= link_to 'Back', :back %>
+</div>

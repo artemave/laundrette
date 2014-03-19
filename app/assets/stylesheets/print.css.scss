@@ -1,0 +1,15 @@
+@media print {
+  .unprintable {
+    display: none;
+  }
+
+  thead,tbody {
+    td,th {
+      border-bottom: solid 1px #ddd;
+
+      &:not(:last-child) {
+        border-right: solid 1px #ddd;
+      }
+    }
+  }
+}

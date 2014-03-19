@@ -1354,3 +1354,9 @@ ul.pagination {
   margin-bottom: .6em;
   @include clearfix();
 }
+
+@media print {
+  a[href]:after {
+    content: none;
+  }
+}
