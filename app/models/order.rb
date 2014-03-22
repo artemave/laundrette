@@ -27,6 +27,10 @@ class Order < ActiveRecord::Base
     status == 'Complete'
   end
 
+  def complete!
+    update_attribute :status, 'Complete'
+  end
+
   def toggle_status
     new_status = status == 'New' ? 'Complete' : 'New'
     update_attribute :status, new_status
