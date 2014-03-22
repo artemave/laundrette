@@ -64,6 +64,16 @@ class OrdersController < ApplicationController
     end
   end
 
+  def toggle_status
+    order = Order.find params[:id]
+    order.toggle_status
+
+    respond_to do |format|
+      format.html { redirect_to :back, notice: order.complete? ? "Order complete!" : "Order status is reset to 'New'" }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order

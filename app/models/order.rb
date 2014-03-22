@@ -23,6 +23,15 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def complete?
+    status == 'Complete'
+  end
+
+  def toggle_status
+    new_status = status == 'New' ? 'Complete' : 'New'
+    update_attribute :status, new_status
+  end
+
   default_value_for :status, 'New'
   default_value_for :total, 0.to_money
 end
