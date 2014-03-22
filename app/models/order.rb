@@ -36,6 +36,10 @@ class Order < ActiveRecord::Base
     update_attribute :status, new_status
   end
 
+  def toggle_paid
+    update_attribute :paid, !paid
+  end
+
   default_value_for :status, 'New'
   default_value_for :total, 0.to_money
 end

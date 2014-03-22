@@ -7,3 +7,9 @@ Feature: mark order paid
     When he pais for it
     Then Timur marks it paid
     And he should see that the order is paid
+
+  Scenario: reset order status back to New
+    Given Mark has made an order
+    When Timur accidently marks it paid
+    Then he can reset the status back to Unpaid
+    And he should see that it is still unpaid

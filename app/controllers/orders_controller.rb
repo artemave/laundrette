@@ -74,6 +74,16 @@ class OrdersController < ApplicationController
     end
   end
 
+  def toggle_paid
+    order = Order.find params[:id]
+    order.toggle_paid
+
+    respond_to do |format|
+      format.html { redirect_to :back, notice: order.paid? ? "Order paid!" : "Order status is reset to 'Unpaid'" }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order

@@ -6,6 +6,7 @@ Laundrette::Application.routes.draw do
 
   resources :orders, only: [:index] do
     post :toggle_status, on: :member
+    post :toggle_paid, on: :member
   end
 
   resources :customers do
