@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.0.10'
 
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
@@ -42,10 +42,8 @@ group :test, :development do
   gem 'selenium-webdriver'
   gem 'fivemat'
   gem 'pry-rails'
-  gem 'pry-stack_explorer'
-  gem 'pry-debugger'
-  gem 'pry-coolline'
   gem 'pry-rescue'
+  gem 'pry-byebug'
   gem "rspec-rails"
   gem 'rspec-given'
   gem 'rspec-fire'
@@ -68,7 +66,7 @@ end
 
 gem 'newrelic_rpm'
 gem "default_value_for"
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.3.1'
 gem 'money-rails', '0.8.1' # till they fix their stupid deprecation warnings
 gem 'ransack'
 gem 'kaminari'
