@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.10'
+gem 'rails', '4.0.11'
 
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
@@ -66,7 +66,7 @@ end
 
 gem 'newrelic_rpm'
 gem "default_value_for"
-gem 'foundation-rails', '5.4.3.1'
+gem 'foundation-rails', '5.4.3.1' # http://stackoverflow.com/questions/25901261/heroku-zurb-foundation-sass-syntaxerror-in-rails-app
 gem 'money-rails', '0.8.1' # till they fix their stupid deprecation warnings
 gem 'ransack'
 gem 'kaminari'
